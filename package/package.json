@@ -1,5 +1,5 @@
 {
-  "name": "pretty-express-simplejwt",
+  "name": "pretty-express-jwtauth",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",

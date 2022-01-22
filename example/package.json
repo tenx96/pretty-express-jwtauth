@@ -12,7 +12,7 @@
   "dependencies": {
     "express": "^4.17.2",
     "pretty-express": "file:../../pretty-express/package",
-    "pretty-express-simplejwt": "file:../package",
+    "pretty-express-jwtauth": "file:../package",
     "reflect-metadata": "^0.1.13"
   },
   "devDependencies": {

@@ -1,7 +1,4 @@
-import { Request, Response, NextFunction } from "express";
-import { ParamsDictionary } from "express-serve-static-core";
 import { SimpleJwtBearerAuth } from "pretty-express-simplejwt";
-import { ParsedQs } from "qs";
 
 export type IJwtPayloadType = {
   role: string;
@@ -20,19 +17,15 @@ class SimpleAuth extends SimpleJwtBearerAuth<IDecoratorArgs, IJwtPayloadType> {
     payload: IJwtPayloadType,
     decoratorArgs: IDecoratorArgs
   ): boolean {
-
-    console.log("VERIFYING DATA PAYLOAD ",payload )
-    console.log("VERIFYING DATA ARGS ",decoratorArgs )
+    console.log("VERIFYING DATA PAYLOAD ", payload);
+    console.log("VERIFYING DATA ARGS ", decoratorArgs);
 
     if (payload.role === decoratorArgs[0]) {
       return true;
     }
 
-
-
     throw new Error("Authentication failed. Invalid role");
   }
-  
 }
 
 const authService = new SimpleAuth("secret");
